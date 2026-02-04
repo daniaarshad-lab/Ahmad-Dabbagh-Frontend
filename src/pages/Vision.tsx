@@ -12,22 +12,22 @@ const organisations = [
     id: 1,
     name: "WiseLife Academy",
     description: "Wiselife Academy is designed for professionals and high achievers seeking values-based success and fulfilment. Its mission is to translate divine and human wisdom into practical, meaningful and applicable training. Through this approach, Wiselife Academy supports individuals in navigating life’s complexities with clarity, achieving peace through purpose, and unlocking their full potential while addressing everyday professional and personal challenges.",
-    // url: "https://wiselifeacademy.com",
-    // icon: "🎓",
+    url: "https://wiselifeacademy.com",
+    icon: "🎓",
   },
   {
     id: 2,
     name: "Prophetic Path",
     description: "Prophetic Path supports Muslims on a structured journey of self-development and spiritual growth. Rooted in Islamic principles, it is designed for youth, teenagers and adults seeking to cleanse the heart, deepen their connection with Allah, and align their lives with the Prophetic model through increased self-awareness, discipline, and consistent spiritual practice.",
-    // url: "https://propheticpath.org",
-    // icon: "📿",
+    url: "https://propheticpath.org",
+    icon: "📿",
   },
   {
     id: 3,
     name: "Seek2Change",
     description: " Founded in 2023, Seek 2 Change is an interfaith organisation led by a team of professionally trained instructors. Open to people from all backgrounds, it offers accessible frameworks for personal growth grounded in universal values, self-awareness, and purposeful living, with the aim of cultivating inner peace and collective transformation worldwide.",
-    // url: "https://seek2change.com",
-    // icon: "✨",
+    url: "https://seek2change.com",
+    icon: "✨",
   },
 ];
 
@@ -342,6 +342,57 @@ const Vision = () => {
             </Fragment>
             ))} */}
           {/* </StaggerContainer> */}
+
+          <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
+  {organisations.map((org, index) => (
+    <StaggerItem key={org.id}>
+      <motion.a
+        href={org.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group block relative"
+        whileHover={{ y: -5 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="relative h-full p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 overflow-hidden hover:border-gold/30 transition-all duration-500 flex flex-col">
+          
+          {/* Icon badge */}
+          <motion.div
+            className="w-12 h-12 rounded-xl bg-gold flex items-center justify-center shadow-lg text-xl mb-6"
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.2 + index * 0.1, type: "spring" }}
+          >
+            {org.icon}
+          </motion.div>
+
+          {/* Top accent line */}
+          <motion.div
+            className="absolute top-0 left-0 h-px bg-gold"
+            initial={{ width: 0 }}
+            whileInView={{ width: "40%" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+          />
+          
+          <h3 className="heading-tertiary text-white mb-3 group-hover:text-gold transition-colors">
+            {org.name}
+          </h3>
+          <p className="body-small text-white/60 mb-4">
+            {org.description}
+          </p>
+          
+          <div className="mt-auto flex items-center gap-2 text-gold/70 group-hover:text-gold transition-colors">
+            <span className="body-small font-medium uppercase tracking-wider">Visit</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </div>
+        </div>
+      </motion.a>
+    </StaggerItem>
+  ))}
+</StaggerContainer>
+
 
           {/* Organisations grid commented out per request */}
 
