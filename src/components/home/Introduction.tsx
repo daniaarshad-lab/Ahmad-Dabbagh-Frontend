@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import teacherPortrait from "@/assets/teacher-portrait.jpg";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
-import { GradientOrb, BlobShape, ModernImageFrame } from "@/components/ui/ModernShapes";
+import { GradientOrb, BlobShape, ModernImageFrame, WaveDivider } from "@/components/ui/ModernShapes";
 
 export function Introduction() {
   return (
@@ -19,11 +19,12 @@ export function Introduction() {
           <ScrollReveal direction="left" className="relative order-2 lg:order-1">
             <div className="relative">
               {/* Main Image with organic shape */}
+
               <div className="relative z-10">
                 <ModernImageFrame
                   src={teacherPortrait}
                   alt="Ahmad Dabbagh"
-                  variant="organic"
+                  variant="blob"
                   className="aspect-[4/5] w-full max-w-md mx-auto"
                 />
               </div>
@@ -48,7 +49,8 @@ export function Introduction() {
           <StaggerContainer className="order-1 lg:order-2 space-y-8">
             <div className="space-y-4">
               <StaggerItem>
-                <motion.span 
+
+                {/* <motion.span 
                   className="inline-flex items-center gap-3 label-text text-olive"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -56,7 +58,8 @@ export function Introduction() {
                 >
                   <span className="w-8 h-px bg-gold" />
                   The Journey
-                </motion.span>
+                </motion.span> */}
+
               </StaggerItem>
               
               <StaggerItem>
@@ -115,6 +118,9 @@ export function Introduction() {
           </StaggerContainer>
         </div>
       </div>
+
+      {/* Wave Divider */}
+      <WaveDivider className="my-8" />
     </section>
   );
 }

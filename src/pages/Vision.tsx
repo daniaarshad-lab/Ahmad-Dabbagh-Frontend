@@ -1,10 +1,12 @@
 import { Layout } from "@/components/layout/Layout";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Fragment } from "react";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 import { GradientOrb, BlobShape, WaveDivider, GlowCard, AccentBadge } from "@/components/ui/ModernShapes";
 import visionVideo from "@/assets/vision-video.mp4";
 
+// Commenting out the card showing countries
 const organisations = [
   {
     id: 1,
@@ -227,13 +229,15 @@ const Vision = () => {
 
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
             {regions.map((region, index) => (
-              <StaggerItem key={region.id}>
-                <GlowCard 
+              <Fragment key={region.id}>
+              
+              <StaggerItem>
+                {/* <GlowCard 
                   glowColor="gold" 
                   className="p-6 h-full relative"
-                >
+                > */}
                   {/* Number badge */}
-                  <motion.div
+                  {/* <motion.div
                     className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-gold flex items-center justify-center shadow-lg"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
@@ -241,27 +245,32 @@ const Vision = () => {
                     transition={{ duration: 0.4, delay: 0.2 + index * 0.1, type: "spring" }}
                   >
                     <span className="font-display text-xs text-charcoal font-bold">0{index + 1}</span>
-                  </motion.div>
+                  </motion.div> */}
 
                   {/* Top accent line */}
-                  <motion.div
+
+                  {/* <motion.div
                     className="h-px bg-gold mb-4"
                     initial={{ width: 0 }}
                     whileInView={{ width: "30%" }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                  />
+                  /> */}
                   
-                  <h3 className="heading-tertiary text-foreground mb-3 pr-8 group-hover:text-gold transition-colors">
+                  {/* <h3 className="heading-tertiary text-foreground mb-3 pr-8 group-hover:text-gold transition-colors">
                     {region.name}
                   </h3>
                   <p className="body-small text-muted-foreground">
                     {region.description}
-                  </p>
-                </GlowCard>
+                  </p> */}
+                {/* </GlowCard> */}
+
               </StaggerItem>
+              </Fragment>
             ))}
           </StaggerContainer>
+
+          
         </div>
       </section>
 
@@ -330,58 +339,11 @@ const Vision = () => {
                   </div> */}
                 {/* </motion.a>
               </StaggerItem>
+            </Fragment>
             ))} */}
           {/* </StaggerContainer> */}
 
-          <StaggerContainer className="grid md:grid-cols-3 gap-8 auto-rows-fr" staggerDelay={0.15}>
-  {organisations.map((org, index) => (
-    <StaggerItem key={org.id} className="flex">
-      <motion.a
-        href={org.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group block relative w-full"
-        whileHover={{ y: -5 }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="relative h-full p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 overflow-hidden hover:border-gold/30 transition-all duration-500 flex flex-col">
-          
-          {/* Icon badge */}
-          <motion.div
-            className="w-12 h-12 rounded-xl bg-gold flex items-center justify-center shadow-lg text-xl mb-6"
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.2 + index * 0.1, type: "spring" }}
-          >
-            {org.icon}
-          </motion.div>
-
-          {/* Top accent line */}
-          <motion.div
-            className="absolute top-0 left-0 h-px bg-gold"
-            initial={{ width: 0 }}
-            whileInView={{ width: "40%" }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-          />
-          
-          <h3 className="heading-tertiary text-white mb-3 group-hover:text-gold transition-colors">
-            {org.name}
-          </h3>
-          <p className="body-small text-white/60 mb-4">
-            {org.description}
-          </p>
-          
-          <div className="mt-auto flex items-center gap-2 text-gold/70 group-hover:text-gold transition-colors">
-            <span className="body-small font-medium uppercase tracking-wider">Visit</span>
-            <ArrowUpRight className="w-4 h-4" />
-          </div>
-        </div>
-      </motion.a>
-    </StaggerItem>
-  ))}
-</StaggerContainer>
+          {/* Organisations grid commented out per request */}
 
         </div>
       </section>
