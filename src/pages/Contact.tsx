@@ -56,7 +56,7 @@ const Contact = () => {
             loop
             playsInline
             className="w-full h-full object-cover"
-            poster="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1920&h=1080&fit=crop"
+            // poster="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1920&h=1080&fit=crop"
           >
             <source src={contactVideo} type="video/mp4" />
           </video>
@@ -117,14 +117,14 @@ const Contact = () => {
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >
-                <span className="label-text text-xs">Write to us</span>
+                {/* <span className="label-text text-xs">Write to us</span>
                 <div className="w-5 h-8 rounded-full border border-white/20 flex justify-center pt-2">
                   <motion.div 
                     className="w-1 h-2 rounded-full bg-gold/60"
                     animate={{ y: [0, 8, 0], opacity: [1, 0.3, 1] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                   />
-                </div>
+                </div> */}
               </motion.div>
             </motion.div>
           </div>

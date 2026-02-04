@@ -12,22 +12,22 @@ const organisations = [
     id: 1,
     name: "WiseLife Academy",
     description: "Wiselife Academy is designed for professionals and high achievers seeking values-based success and fulfilment. Its mission is to translate divine and human wisdom into practical, meaningful and applicable training. Through this approach, Wiselife Academy supports individuals in navigating life’s complexities with clarity, achieving peace through purpose, and unlocking their full potential while addressing everyday professional and personal challenges.",
-    url: "https://wiselifeacademy.com",
-    icon: "🎓",
+    // url: "https://wiselifeacademy.com",
+    // icon: "🎓",
   },
   {
     id: 2,
     name: "Prophetic Path",
     description: "Prophetic Path supports Muslims on a structured journey of self-development and spiritual growth. Rooted in Islamic principles, it is designed for youth, teenagers and adults seeking to cleanse the heart, deepen their connection with Allah, and align their lives with the Prophetic model through increased self-awareness, discipline, and consistent spiritual practice.",
-    url: "https://propheticpath.org",
-    icon: "📿",
+    // url: "https://propheticpath.org",
+    // icon: "📿",
   },
   {
     id: 3,
     name: "Seek2Change",
     description: " Founded in 2023, Seek 2 Change is an interfaith organisation led by a team of professionally trained instructors. Open to people from all backgrounds, it offers accessible frameworks for personal growth grounded in universal values, self-awareness, and purposeful living, with the aim of cultivating inner peace and collective transformation worldwide.",
-    url: "https://seek2change.com",
-    icon: "✨",
+    // url: "https://seek2change.com",
+    // icon: "✨",
   },
 ];
 
@@ -82,7 +82,7 @@ const Vision = () => {
             loop
             playsInline
             className="w-full h-full object-cover"
-            poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop"
+            // poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop"
           >
             <source src={visionVideo} type="video/mp4" />
           </video>
@@ -144,14 +144,14 @@ const Vision = () => {
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >
-                <span className="label-text text-xs">Discover</span>
+                {/* <span className="label-text text-xs">Discover</span>
                 <div className="w-5 h-8 rounded-full border border-white/20 flex justify-center pt-2">
                   <motion.div 
                     className="w-1 h-2 rounded-full bg-gold/60"
                     animate={{ y: [0, 8, 0], opacity: [1, 0.3, 1] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                   />
-                </div>
+                </div> */}
               </motion.div>
             </motion.div>
           </div>
@@ -342,15 +342,15 @@ const Vision = () => {
             </Fragment>
             ))} */}
           {/* </StaggerContainer> */}
-
-          <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
-  {organisations.map((org, index) => (
-    <StaggerItem key={org.id}>
-      <motion.a
+        
+        <StaggerContainer className="grid md:grid-cols-3 gap-8 auto-rows-fr" staggerDelay={0.15}>
+          {organisations.map((org, index) => (
+             <StaggerItem key={org.id} className="flex">
+             <motion.a
         href={org.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group block relative"
+        className="group block relative w-full"
         whileHover={{ y: -5 }}
         transition={{ duration: 0.3 }}
       >
@@ -393,9 +393,7 @@ const Vision = () => {
   ))}
 </StaggerContainer>
 
-
-          {/* Organisations grid commented out per request */}
-
+         
         </div>
       </section>
 
